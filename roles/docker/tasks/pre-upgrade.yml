@@ -17,4 +17,4 @@
     - docker-common
     - docker-engine
     - docker-selinux
-  when: ansible_os_family == 'RedHat' and (docker_versioned_pkg[docker_version | string] | search('docker-ce'))
+  when: ansible_os_family == 'RedHat' and (docker_versioned_pkg[docker_version | string] | search('docker-ce')) and not is_atomic
